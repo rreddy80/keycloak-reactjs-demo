@@ -1,8 +1,10 @@
 {
-  "realm": "bookshop",
-  "auth-server-url": "http://localhost:8080/",
+  "realm": "mapps",
+  "url": "http://localhost:8888/",
+  "auth-server-url": "http://localhost:8888/",
   "ssl-required": "external",
-  "resource": "bookBox",
+  "resource": "usermanager",
+  "clientId": "usermanager",
   "public-client": true,
   "confidential-port": 0
 }

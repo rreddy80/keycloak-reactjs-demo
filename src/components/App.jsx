@@ -1,6 +1,8 @@
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import BookBox from "../components/BookBox";
+import Menu from "../components/Menu";
+import UserContainer from '../components/UserContainer';
 import StoreService from "../services/StoreService";
 import RenderOnAnonymous from "./RenderOnAnonymous";
 import RenderOnAuthenticated from "./RenderOnAuthenticated";
@@ -16,7 +18,9 @@ const App = () => (
           <Welcome/>
         </RenderOnAnonymous>
         <RenderOnAuthenticated>
+          <Menu />
           <BookBox/>
+          <UserContainer/>
         </RenderOnAuthenticated>
       </div>
     </BrowserRouter>

@@ -9,8 +9,10 @@ const Menu = () => (
       </div>
       <div id="navbar">
         <ul className="nav navbar-nav">
+          <li><Link to="/users">Users</Link></li>
           <li><Link to="/">List</Link></li>
           <li><Link to="/books/new">New Book</Link></li>
+          <li><Link to="/users/create">Create User</Link></li>
           <li><Link to="/secret">Secret Books</Link></li>
           <li><Link to="/foo">No Match</Link></li>
         </ul>
