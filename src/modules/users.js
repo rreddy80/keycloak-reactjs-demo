@@ -4,7 +4,7 @@ import UserService from "../services/UserService";
 const _axios = axios.create();
 const base_url = "http://localhost:8888";
 const users_url = `${base_url}/admin/realms/mapps/users/`;
-const users_group_id = "aa43a0c0-cce6-4449-bf10-73955d8f0043";
+const users_group_id = "ecd3ffff-3cb6-4acc-bea8-5c30d4ad21b4";
 
 export const createUser = async (newuser) => {
     await _axios.post(users_url, {
