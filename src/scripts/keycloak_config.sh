@@ -39,7 +39,7 @@ function configureKeycloak() {
         echo "It seems there is a problem to get the Keycloak access token: ($access_token)"
         echo "The script exits here!"
         echo ""
-        echo "If the problem persists, please contact someone from Devops."
+        echo "If the problem persists, please contact owner of this script"
         echo "------------------------------------------------------------------------"
         exit 1
     fi
@@ -50,7 +50,12 @@ function configureKeycloak() {
     echo "------------------------------------------------------------------------"
     echo ""
 
-    result=$(curl -d @./realm-export-mappsRealm.json -H "Content-Type: application/json" -H "Authorization: bearer $access_token" "$KEYCLOAK_URL/admin/realms")
+    file_contents=$(<./realm-export-mappsRealm.json)
+    file_contents=${file_contents//NEW_REALM_ID/$REALM_ID}
+    file_contents=${file_contents//NEW_CLIENT_ID/$NEW_CLIENT_ID}
+    # echo $file_contents
+
+    result=$(curl -d "$file_contents" -H "Content-Type: application/json" -H "Authorization: bearer $access_token" "$KEYCLOAK_URL/admin/realms")
 
     if [ "$result" = "" ]; then
         echo "------------------------------------------------------------------------"
@@ -65,10 +70,7 @@ function configureKeycloak() {
         echo "It seems there is a problem with the realm creation: $result"
         echo "The script exits here!"
         echo ""
-        echo "Please delete the existing applications in your `Code Engine` project: $PROJECT_NAME"
-        echo "and run this script again."
-        echo ""
-        echo "If the problem persists, please contact thomas.suedbroecker@de.ibm.com or create a GitHub issue."
+        echo "If the problem persists, please contact owner of this script"
         echo "------------------------------------------------------------------------"
         exit 1
     fi
@@ -81,7 +83,7 @@ echo "************************************"
 configureKeycloak
 
 echo "************************************"
-echo " URLs"
+echo " URLs you can now access are below"
 echo "************************************"
 echo " - Keycloak : $KEYCLOAK_URL/admin/master/console/#/realms/$REALM_ID"
 echo ""

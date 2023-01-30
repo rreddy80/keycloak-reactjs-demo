@@ -1,6 +1,6 @@
 {
-  "id": "mapps",
-  "realm": "mapps",
+  "id": "NEW_REALM_ID",
+  "realm": "NEW_REALM_ID",
   "notBefore": 0,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": false,
@@ -47,7 +47,7 @@
     "realm": [
       {
         "id": "032b6700-18ea-4b4e-980d-3961baf1bb39",
-        "name": "default-roles-mapps",
+        "name": "default-roles-NEW_REALM_ID",
         "description": "${role_default-roles}",
         "composite": true,
         "composites": {
@@ -63,7 +63,7 @@
           }
         },
         "clientRole": false,
-        "containerId": "mapps",
+        "containerId": "NEW_REALM_ID",
         "attributes": {}
       },
       {
@@ -72,7 +72,7 @@
         "description": "",
         "composite": false,
         "clientRole": false,
-        "containerId": "mapps",
+        "containerId": "NEW_REALM_ID",
         "attributes": {}
       },
       {
@@ -81,7 +81,7 @@
         "description": "${role_offline-access}",
         "composite": false,
         "clientRole": false,
-        "containerId": "mapps",
+        "containerId": "NEW_REALM_ID",
         "attributes": {}
       },
       {
@@ -89,12 +89,12 @@
         "name": "uma_authorization",
         "composite": false,
         "clientRole": false,
-        "containerId": "mapps",
+        "containerId": "NEW_REALM_ID",
         "attributes": {}
       }
     ],
     "client": {
-      "usermanager": [],
+      "NEW_CLIENT_ID": [],
       "realm-management": [
         {
           "id": "551842cd-d383-4b7d-a9ae-3b79d21263fb",
@@ -436,8 +436,8 @@
     },
     {
       "id": "ecd3ffff-3cb6-4acc-bea8-5c30d4ad21b4",
-      "name": "mapps-users",
-      "path": "/mapps-users",
+      "name": "NEW_REALM_ID-users",
+      "path": "/NEW_REALM_ID-users",
       "attributes": {},
       "realmRoles": [],
       "clientRoles": {},
@@ -446,11 +446,11 @@
   ],
   "defaultRole": {
     "id": "032b6700-18ea-4b4e-980d-3961baf1bb39",
-    "name": "default-roles-mapps",
+    "name": "default-roles-NEW_REALM_ID",
     "description": "${role_default-roles}",
     "composite": true,
     "clientRole": false,
-    "containerId": "mapps"
+    "containerId": "NEW_REALM_ID"
   },
   "requiredCredentials": [
     "password"
@@ -515,13 +515,13 @@
       "clientId": "account",
       "name": "${client_account}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/mapps/account/",
+      "baseUrl": "/realms/NEW_REALM_ID/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/mapps/account/*"
+        "/realms/NEW_REALM_ID/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -559,13 +559,13 @@
       "clientId": "account-console",
       "name": "${client_account-console}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/mapps/account/",
+      "baseUrl": "/realms/NEW_REALM_ID/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/mapps/account/*"
+        "/realms/NEW_REALM_ID/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -728,13 +728,13 @@
       "clientId": "security-admin-console",
       "name": "${client_security-admin-console}",
       "rootUrl": "${authAdminUrl}",
-      "baseUrl": "/admin/mapps/console/",
+      "baseUrl": "/admin/NEW_REALM_ID/console/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/admin/mapps/console/*"
+        "/admin/NEW_REALM_ID/console/*"
       ],
       "webOrigins": [
         "+"
@@ -789,7 +789,7 @@
     },
     {
       "id": "cb2db993-7efa-4903-9353-c8a7c9f8e276",
-      "clientId": "usermanager",
+      "clientId": "NEW_CLIENT_ID",
       "name": "",
       "description": "",
       "rootUrl": "http://localhost:3000",
@@ -1382,89 +1382,6 @@
   "enabledEventTypes": [],
   "adminEventsEnabled": false,
   "adminEventsDetailsEnabled": false,
-  "identityProviders": [
-    {
-      "alias": "keycloak-oidc",
-      "displayName": "",
-      "internalId": "d79d0d65-8ee1-47f0-8611-f9e6eea71f20",
-      "providerId": "keycloak-oidc",
-      "enabled": false,
-      "updateProfileFirstLoginMode": "on",
-      "trustEmail": false,
-      "storeToken": false,
-      "addReadTokenRoleOnCreate": false,
-      "authenticateByDefault": false,
-      "linkOnly": false,
-      "firstBrokerLoginFlowAlias": "first broker login",
-      "config": {
-        "validateSignature": "false",
-        "hideOnLoginPage": "false",
-        "tokenUrl": "http://localhost",
-        "acceptsPromptNoneForwardFromClient": "false",
-        "clientId": "ssss",
-        "uiLocales": "false",
-        "backchannelSupported": "false",
-        "useJwksUrl": "true",
-        "loginHint": "false",
-        "pkceEnabled": "false",
-        "clientAuthMethod": "client_secret_basic",
-        "authorizationUrl": "http://localhost",
-        "disableUserInfo": "false",
-        "syncMode": "IMPORT",
-        "clientSecret": "**********",
-        "passMaxAge": "false",
-        "allowedClockSkew": "0"
-      }
-    },
-    {
-      "alias": "keycloak-oidc-2",
-      "displayName": "",
-      "internalId": "7cf3fd74-8d3a-4c8d-b651-fcc885df8a31",
-      "providerId": "keycloak-oidc",
-      "enabled": false,
-      "updateProfileFirstLoginMode": "on",
-      "trustEmail": false,
-      "storeToken": false,
-      "addReadTokenRoleOnCreate": false,
-      "authenticateByDefault": false,
-      "linkOnly": false,
-      "firstBrokerLoginFlowAlias": "first broker login",
-      "config": {
-        "validateSignature": "false",
-        "hideOnLoginPage": "false",
-        "clientId": "admin",
-        "uiLocales": "false",
-        "acceptsPromptNoneForwardFromClient": "false",
-        "backchannelSupported": "false",
-        "loginHint": "false",
-        "pkceEnabled": "false",
-        "clientAuthMethod": "client_secret_post",
-        "disableUserInfo": "false",
-        "syncMode": "IMPORT",
-        "clientSecret": "**********",
-        "passMaxAge": "false",
-        "allowedClockSkew": "0"
-      }
-    }
-  ],
-  "identityProviderMappers": [
-    {
-      "id": "b373f111-a0ca-4485-86c1-5e0f17d093d3",
-      "name": "test",
-      "identityProviderAlias": "keycloak-oidc-2",
-      "identityProviderMapper": "hardcoded-user-session-attribute-idp-mapper",
-      "config": {
-        "syncMode": "INHERIT"
-      }
-    },
-    {
-      "id": "7132dfdc-093e-4da1-80dd-539f2a824a7f",
-      "name": "test-mapper",
-      "identityProviderAlias": "keycloak-oidc2",
-      "identityProviderMapper": "keycloak-oidc",
-      "config": {}
-    }
-  ],
   "components": {
     "org.keycloak.services.clientregistration.policy.ClientRegistrationPolicy": [
       {
